@@ -10,7 +10,7 @@ estados_in = []
 print "Ingrese estado inicial"
 inicial = stdin.readline().strip()
 
-# e = open("funcion" , "r")
+
 
 #Abrir alfabeto
 a = open("alfabeto", "r")
@@ -43,17 +43,22 @@ for line in a:
 
 
 estado_actu = inicial
+print "Estado inicial: "
 print inicial
+print "Alfabeto: "
 print alfabeto
+print "Estados: "
 print estados
+print "Estados finales o de aceptacion"
 print aceptacion
+print "Funcion de transicion:"
 print f_transicion
 
 
 print "Ingrese la cadena a probar"
 cadena = stdin.readline().strip()
 
-
+#Se mira en la funcion de trancision a que estado lleva el simbolo ingresado
 for simbolo in cadena:
     estado_actu = f_transicion[estado_actu][simbolo]
 
