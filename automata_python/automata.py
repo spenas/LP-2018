@@ -11,7 +11,7 @@ estados_in = []
 print "Ingrese estado inicial"
 inicial = stdin.readline().strip()
 
-# e = open("funcion" , "r")
+
 
 #Abrir alfabeto
 a = open("alfabeto", "r")
@@ -45,7 +45,8 @@ for line in a:
 
 
     nline += 1
-
+nodeaux = A.get_node(str(inicial))
+nodeaux.attr['color'] = 'blue'
 
 estado_actu = inicial
 print inicial
@@ -77,7 +78,6 @@ B.draw('automata.png')
 
 
 
-# A.draw('file.png')
 
     
 
