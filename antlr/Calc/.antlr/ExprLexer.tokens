@@ -1,0 +1,10 @@
+MAS=1
+MENOS=2
+MULT=3
+DIV=4
+ENTERO=5
+ESPACIO=6
+'+'=1
+'-'=2
+'*'=3
+'/'=4

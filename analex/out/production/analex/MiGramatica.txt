@@ -1,0 +1,180 @@
+SPri A B C D E F G H I J K L M N O P Q R S T U V W X Y Z AA AB AC AD AE AF AG AH AI AJ AK AL AM AN AO AP AQ AR AS AT AU AV AW AX AY AZ BA BB BC BD BE BF BG BH BI BJ BK BL BM BN BO BP BQ BR BS BT BU BV BW BX BY R' S' T' U' V' W' X' BW'
+nil int id eps , . desde importar for while if ( ) { } = != [ ]
+170
+SPri - C SPri
+SPri - A
+A - I A
+A - B
+B - AT B
+B - eps
+C - D E
+D - desde F
+D - eps
+E - importar F G
+F - id
+G - . H
+G - eps
+H - id G
+I - funcion id J K funcion
+J - ( L )
+L - id M
+L - eps
+M - , L
+M - eps
+K - N
+K - end
+N - AT K
+N - retorno O
+O - ( P )
+P - R Q
+Q - eps
+Q - , P
+R - S R'
+R' - || S R'
+R' - eps
+S - T S'
+S' - && B S'
+S' - eps
+T - U T'
+T' - == U T'
+T' - != U T'
+T' - eps
+U - V U'
+U' - > V U'
+U' - < V U'
+U' - >= V U'
+U' - <= V U'
+U' - eps
+V - W V'
+V' - + W V'
+V' - - W V'
+V' - eps
+W - X W'
+W' - * X W'
+W' - / X W'
+W' - % X W'
+W' - eps
+X - Y X'
+X' - ^ Y X'
+X' - eps
+Y - valor_entero
+Y - valor_float
+Y - valor_string
+Y - ! Y
+Y - false
+Y - true
+Y - Z
+Y - ( R )
+Z - id AA
+AA - eps
+AA - AB
+AA - AF
+AA - AI
+AB - [ AC ] AD
+AC - valor_entero
+AC - Z
+AD - [ AC ] AD
+AD - eps
+AF - . AG
+AG - id AH
+AH - eps
+AH - . AG
+AI - ( AJ )
+AJ - R AK
+AJ - AL AK
+AJ - AQ AK
+AK - , AJ
+AK - eps
+AL - { AM }
+AM - id AN AP
+AN - : AO
+AO - S
+AO - valor_entero
+AO - valor_float
+AO - true
+AO - false
+AO - Z
+AO - AQ
+AP - , AM
+AP - eps
+AQ - [ AR ]
+AR - valor_float AS
+AR - valor_entero AS
+AR - valor_string AS
+AR - true AS
+AR - false AS
+AR - AL AS
+AR - Z AS
+AR - AQ AS
+AS - , AR
+AS - eps
+AT - AU
+AT - AX
+AT - R
+AT - AQ
+AT - AL
+AT - BC
+AT - BF
+AT - BL
+AT - BR
+AT - valor_string
+AT - nil
+AU - leer AV
+AV - ( AW )
+AW - id
+AX - log AY
+AY - ( AZ )
+AZ - valor_string BA
+AZ - R
+BA - + AZ
+BA - * BB
+BA - eps
+BB - valor_entero
+BC - id BD
+BD - = BE
+BE - valor_string
+BE - valor_int
+BE - valor_float
+BE - nil
+BE - AQ
+BE - AL
+BE - R
+BF - while BG BI
+BG - ( BH )
+BH - R
+BI - { BJ
+BI - AT
+BJ - BK
+BK - AT BJ
+BK - }
+BL - for BM
+BM - id BN
+BN - in BO
+BO - AQ BP
+BO - id BP
+BP - { BQ
+BP - AT
+BQ - AT BQ
+BQ - }
+BR - if BS
+BS - ( BT ) BU
+BT - R
+BU - { BV
+BU - AT BW'
+BV - AT BV
+BV - } BW'
+BV - }
+BW' - else BW
+BW - BR
+BW - BX
+BX - { BY
+BX - AT
+BY - AT BY
+BY - }
+
+
+Hola;;;;
+Mundo
+1 2 3 4 5
+true
+false

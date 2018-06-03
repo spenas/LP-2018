@@ -1,0 +1,52 @@
+ARRAY => [ INS_ARRAY ]
+INS_ARRAY => TIPO CONT
+CONT => , TIPO CONT
+CONT => epsilon
+VAR => VAR_TIPO
+VAR_TIPO => ID TIPO
+TIPO => ID
+TIPO => ARRAY
+TIPO => EXPR
+TIPO => E
+TIPO => BOOL
+TIPO => STRUCT
+BOOL => true
+BOOL => false
+E => integer
+E => string 
+E => double
+E => ID
+EXPRESION => E OP_BINARIO EXPRESION
+EXPRESION => E
+EXPRESION => OP_UNARIO EXPRESION 
+EXPRESION => ( EXPRESION )
+BODY => 
+
+FOR => for ID in ARRAY { BODY }
+WHILE => while EXPRESSION { BODY }
+FUNCTION => funcion ID ( PARAMS ) BODY end funcion
+IMPORT => importar ID
+STRUCT => { INS_STRUCT }
+INS_STRUCT => ID : E CONT_S
+CONT_S => , ID : E CONT_S
+CONT_S => epsilon
+OP_BINARIO => + 
+OP_BINARIO => * 
+OP_BINARIO => - 
+OP_BINARIO => / 
+OP_BINARIO => > 
+OP_BINARIO => < 
+OP_BINARIO => >= 
+OP_BINARIO => <= 
+OP_BINARIO => == 
+OP_BINARIO => || 
+OP_BINARIO => && 
+OP_BINARIO => %  
+OP_BINARIO => eq  
+OP_BINARIO => ne  
+OP_BINARIO => != 
+OP_UNARIO => + 
+OP_UNARIO => - 
+OP_UNARIO => ! 
+
+

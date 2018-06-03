@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
 import java.io.FileReader;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +18,7 @@ ERRORES ACTUALES:
 public class Main {
 
     //Declaracion de constantes, se convierten strings en listas, para poder usar la funcion .contains()
-    private static final List ALFABETO = Arrays.asList("abcdefghijklmnopqrstuvwyzABCDEFGHIJKLMNOPQRSTUVWYZ".split(""));
+    private static final List ALFABETO = Arrays.asList("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
     private static final List NUMERO = Arrays.asList("1234567890".split(""));
     private static final List OPERACION = Arrays.asList("+*-/%^".split(""));
     private static final List ESPECIALES = Arrays.asList(".;:#<>=!&,|\"'".split(""));
@@ -30,8 +32,6 @@ public class Main {
         int columna = 1;
 
         String letra[] = bloque.split("");
-
-
         //-------------------------------***********************************----------------------------------
         //Se empieza a recorrer letra por letra
         for (int i = 0; i < letra.length ; i++) {
@@ -313,6 +313,8 @@ public class Main {
                 return "if";
             case "in":
                 return "in";
+            case "importar":
+                return "importar";
 
 
         }
@@ -376,4 +378,5 @@ public class Main {
 
 
     }
-}
+
+    }

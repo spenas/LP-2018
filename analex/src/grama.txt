@@ -1,0 +1,219 @@
+GG_1 GG_2 GG_3 elementos_1 seg_1 variable_1 variable_2 variable_3 variable_4 acc_variable_1 acc_variable_2 acc_variable_arit_1 acc_variable_arit_2 acc_variable_arit_pura_1 acc_variable_arit_pura_2 acc_variable_pura_1 acc_variable_pura_2 dec_arreglo_1 dec_arreglo_2 dec_arreglo_3 dec_estructura_1 dec_estructura_2 dec_estructura_3 dec_estructura_4 acc_estructura_1 acc_estructura_2 acc_arreglo_1 acc_arreglo_2 acc_arreglo_3 acc_funcion_1 acc_funcion_2 acc_funcion_3 operaciones_1 operaciones_2 operaciones_3 operaciones_4 operaciones_5 operaciones_6 operaciones_7 operaciones_8 operaciones_9 operaciones_10 operaciones_11 operaciones_12 operaciones_13 operaciones_14 operaciones_17 operaciones_sin_id_1 operaciones_sin_id_2 operaciones_sin_id_3 operaciones_sin_id_4 operaciones_sin_id_5 operaciones_sin_id_6 operaciones_sin_id_7 operaciones_sin_id_8 operaciones_sin_id_9 operaciones_sin_id_10 operaciones_sin_id_11 operaciones_sin_id_12 operaciones_sin_id_13 operaciones_sin_id_14 operaciones_sin_id_17 operaciones_arit_1 operaciones_arit_2 operaciones_arit_3 operaciones_arit_4 operaciones_arit_5 operaciones_arit_6 operaciones_arit_9 operaciones_arit_sinid_1 operaciones_arit_sinid_2 operaciones_arit_sinid_3 operaciones_arit_sinid_4 operaciones_arit_sinid_5 operaciones_arit_sinid_6 operaciones_arit_sinid_9 dec_funcion_1 dec_funcion_2 dec_funcion_3 dec_funcion_4 importar_1 importar_2 importar_3 importar_4 importar_5 retorno_1 retorno_2 retorno_3 leer_1 leer_2 log_1 log_2 lineas_1 if_1 if_2 if_3 if_4 if_5 if_7 for_1 for_2 for_3 for_4 while_1 while_2 while_3 
+nil int false true string eps
+215
+GG_1 - importar_1 GG_1
+GG_1 - GG_2
+GG_2 - dec_funcion_1 GG_2
+GG_2 - GG_3
+GG_3 - linea_1 GG_3
+GG_3 - eps	
+elementos_1 - nil												
+elementos_1 - int												
+elementos_1 - false												
+elementos_1 - true												
+elementos_1 - string											
+seg_1 - acc_variable_1
+seg_1 - operaciones_sin_id_1
+seg_1 - dec_arreglo_1
+seg_1 - dec_estructura_1
+variable_1 - id variable_2 																							
+variable_2 - eps																											
+variable_2 - = variable_3																								
+variable_2 - acc_arreglo_1 variable_4																					
+variable_2 - acc_estructura_1 variable_4																				
+variable_2 - acc_funcion_1																								
+variable_2 - operaciones_14 operaciones_12 operaciones_10 operaciones_8 operaciones_6 operaciones_4 operaciones_2 		
+variable_3 - seg_1  																				
+variable_4 - eps																											
+variable_4 - = variable_3																								
+acc_variable_1 - id acc_variable_2 																						
+acc_variable_2 - eps																										
+acc_variable_2 - acc_arreglo_1																							
+acc_variable_2 - acc_estructura_1																						
+acc_variable_2 - acc_funcion_1																							
+acc_variable_2 - operaciones_14 operaciones_12 operaciones_10 operaciones_8 operaciones_6 operaciones_4 operaciones_2 
+acc_variable_arit_1 - id acc_variable_arit_2													
+acc_variable_arit_2 - operaciones_arit_6 operaciones_arit_4 operaciones_arit_2					
+acc_variable_arit_2 - eps																			
+acc_variable_arit_2 - acc_arreglo_1																
+acc_variable_arit_2 - acc_estructura_1															
+acc_variable_arit_2 - acc_funcion_1																
+acc_variable_arit_pura_1 - id acc_variable_arit_pura_2													
+acc_variable_arit_pura_2 - operaciones_arit_6 operaciones_arit_4 operaciones_arit_2						
+acc_variable_arit_pura_2 - eps																		
+acc_variable_arit_pura_2 - acc_arreglo_1						
+acc_variable_arit_pura_2 - acc_estructura_1						
+acc_variable_arit_pura_2 - acc_funcion_1						
+acc_variable_pura_1 - id acc_variable_arit_2					
+acc_variable_pura_2 - eps											
+acc_variable_pura_2 - acc_arreglo_1								
+acc_variable_pura_2 - acc_estructura_1							
+acc_variable_pura_2 - acc_funcion_1								
+dec_arreglo_1 - [ dec_arreglo_2 ]								
+dec_arreglo_2 - seg_1 dec_arreglo_3								
+dec_arreglo_3 - , dec_arreglo_2									
+dec_arreglo_3 - eps												
+dec_estructura_1 - { dec_estructura_2 }							
+dec_estructura_2 - id : dec_estructura_3						
+dec_estructura_3 - seg_1 dec_estructura_4 						
+dec_estructura_4 - eps 										
+dec_estructura_4 - , dec_estructura_2						
+acc_estructura_1 - . id acc_estructura_2			
+acc_estructura_2 - eps								
+acc_estructura_2 - . id acc_estructura_2			
+acc_arreglo_1 - [ acc_arreglo_2 ] 						
+acc_arreglo_2 - acc_variable_arit_1 acc_arreglo_3			
+acc_arreglo_2 - operaciones_arit_sin_id_1 acc_arreglo_3		
+acc_arreglo_3 - , acc_arreglo_2							
+acc_arreglo_3 - eps										
+acc_funcion_1 - ( acc_funcion_2 )							
+acc_funcion_2 - seg_1 acc_funcion_3							
+acc_funcion_3 - eps											
+acc_funcion_3 - , acc_funcion_2								
+operaciones_1 - operaciones_3 operaciones_2					
+operaciones_2 - or operaciones_3 operaciones_2				
+operaciones_2 - eps											
+operaciones_3 - operaciones_5 operaciones_4					
+operaciones_4 - and operaciones_5 operaciones_4				
+operaciones_4 - eps											
+operaciones_5 - operaciones_7 operaciones_6					
+operaciones_6 - igual_num operaciones_7 operaciones_6		
+operaciones_6 - diff_num operaciones_7 operaciones_6		
+operaciones_6 - eps											
+operaciones_7 - operaciones_9 operaciones_8					
+operaciones_8 - mayor operaciones_9 operaciones_8			
+operaciones_8 - menor operaciones_9 operaciones_8			
+operaciones_8 - mayor_igual operaciones_9 operaciones_8		
+operaciones_8 - menor_igual operaciones_9 operaciones_8		
+operaciones_8 - eps											
+operaciones_9 - operaciones_11 operaciones_10				
+operaciones_10 - mas operaciones_11 operaciones_10				
+operaciones_10 - menos operaciones_11 operaciones_10					
+operaciones_10 - eps											
+operaciones_11 - operaciones_13 operaciones_12				
+operaciones_12 - mul operaciones_13 operaciones_12					
+operaciones_12 - div operaciones_13 operaciones_12					
+operaciones_12 - mod operaciones_13 operaciones_12					
+operaciones_12 - eps											
+operaciones_13 - operaciones_17 operaciones_14				
+operaciones_14 - pot operaciones_17 operaciones_14						
+operaciones_14 - eps											
+operaciones_17 - not operaciones_17 						
+operaciones_17 - elementos_1								
+operaciones_17 - acc_variable_pura_1						
+operaciones_17 - ( operaciones_1 )							
+operaciones_sin_id_1 - operaciones_sin_id_3 operaciones_sin_id_2						
+operaciones_sin_id_2 - or operaciones_sin_id_3 operaciones_sin_id_2						
+operaciones_sin_id_2 - eps																
+operaciones_sin_id_3 - operaciones_sin_id_5 operaciones_sin_id_4						
+operaciones_sin_id_4 - and operaciones_sin_id_5 operaciones_sin_id_4					
+operaciones_sin_id_4 - eps																
+operaciones_sin_id_5 - operaciones_sin_id_7 operaciones_sin_id_6						
+operaciones_sin_id_6 - igual_num operaciones_sin_id_7 operaciones_sin_id_6				
+operaciones_sin_id_6 - diff_num operaciones_sin_id_7 operaciones_sin_id_6				
+operaciones_sin_id_6 - eps																
+operaciones_sin_id_7 - operaciones_sin_id_9 operaciones_sin_id_8						
+operaciones_sin_id_8 - mayor operaciones_sin_id_9 operaciones_sin_id_8					
+operaciones_sin_id_8 - menor operaciones_sin_id_9 operaciones_sin_id_8					
+operaciones_sin_id_8 - mayor_igual operaciones_sin_id_9 operaciones_sin_id_8			
+operaciones_sin_id_8 - menor_igual operaciones_sin_id_9 operaciones_sin_id_8			
+operaciones_sin_id_8 - eps																
+operaciones_sin_id_9 - operaciones_sin_id_11 operaciones_sin_id_10						
+operaciones_sin_id_10 - mas operaciones_sin_id_11 operaciones_sin_id_10					
+operaciones_sin_id_10 - menos operaciones_sin_id_11 operaciones_sin_id_10					
+operaciones_sin_id_10 - eps																
+operaciones_sin_id_11 - operaciones_sin_id_13 operaciones_sin_id_12						
+operaciones_sin_id_12 - mul operaciones_sin_id_13 operaciones_sin_id_12				
+operaciones_sin_id_12 - div operaciones_sin_id_13 operaciones_sin_id_12					
+operaciones_sin_id_12 - mod operaciones_sin_id_13 operaciones_sin_id_12					
+operaciones_sin_id_12 - eps																
+operaciones_sin_id_13 - operaciones_sin_id_17 operaciones_sin_id_14						
+operaciones_sin_id_14 - pot operaciones_sin_id_17 operaciones_sin_id_14					
+operaciones_sin_id_14 - eps																
+operaciones_sin_id_17 - not operaciones_sin_id_17										
+operaciones_sin_id_17 - elementos_1														
+operaciones_sin_id_17 - ( operaciones_sin_id_1 )										
+operaciones_arit_1 - operaciones_arit_3 operaciones_arit_2									
+operaciones_arit_2 - mas operaciones_arit_3 operaciones_arit_2			
+operaciones_arit_2 - menos operaciones_arit_3 operaciones_arit_2				
+operaciones_arit_2 - eps													
+operaciones_arit_3 - operaciones_arit_5 operaciones_arit_4				
+operaciones_arit_4 - mul operaciones_arit_5 operaciones_arit_4				
+operaciones_arit_4 - div operaciones_arit_5 operaciones_arit_4				
+operaciones_arit_4 - mod operaciones_arit_5 operaciones_arit_4					
+operaciones_arit_4 - eps												
+operaciones_arit_5 - operaciones_arit_9 operaciones_arit_6							
+operaciones_arit_6 - pot operaciones_arit_9 operaciones_arit_6						
+operaciones_arit_6 - eps														
+operaciones_arit_9 - int																									
+operaciones_arit_9 - acc_variable_arit_pura_1							
+operaciones_arit_9 - ( operaciones_arit_1 )								
+operaciones_arit_sinid_1 - operaciones_arit_sinid_3 operaciones_arit_sinid_2							
+operaciones_arit_sinid_2 - mas operaciones_arit_sinid_3 operaciones_arit_sinid_2				
+operaciones_arit_sinid_2 - menos operaciones_arit_sinid_3 operaciones_arit_sinid_2					
+operaciones_arit_sinid_2 - eps															
+operaciones_arit_sinid_3 - operaciones_arit_sinid_5 operaciones_arit_sinid_4					
+operaciones_arit_sinid_4 - mul operaciones_arit_sinid_5 operaciones_arit_sinid_4					
+operaciones_arit_sinid_4 - div operaciones_arit_sinid_5 operaciones_arit_sinid_4					
+operaciones_arit_sinid_4 - mod operaciones_arit_sinid_5 operaciones_arit_sinid_4					
+operaciones_arit_sinid_4 - eps															
+operaciones_arit_sinid_5 - operaciones_arit_sinid_9 operaciones_arit_sinid_6							
+operaciones_arit_sinid_6 - pot operaciones_arit_sinid_9 operaciones_arit_sinid_6					
+operaciones_arit_sinid_6 - eps														
+operaciones_arit_sinid_9 - ( operaciones_arit_sinid_1 )									
+dec_funcion_1 - funcion id ( dec_funcion_2 ) dec_funcion_4 end funcion 			
+dec_funcion_2 - id dec_funcion_3												
+dec_funcion_3 - , dec_funcion_2												
+dec_funcion_3 - eps															
+dec_funcion_4 - linea_1 dec_funcion_4										
+dec_funcion_4 - dec_funcion_1 dec_funcion_4									
+dec_funcion_4 - eps																
+importar_1 - importar_2 importar_3							
+importar_2 - desde importar_4					
+importar_2 - eps							
+importar_3 - importar importar_4 				
+importar_4 - id	importar_5				
+importar_5 - . id importar_5			
+importar_5 - eps							
+retorno_1 - retorno ( retorno_2 )			
+retorno_2 - seg_1 retorno_3				
+retorno_3 - , retorno_2							
+leer_1 - leer ( leer_2 ) 			
+leer_2 - acc_variable_pura_1		
+log_1 - log(log_2)					
+log_2 - operaciones_1
+lineas_1 - leer_1					
+lineas_1 - log_1						
+lineas_1 - dec_arreglo_1				
+lineas_1 - dec_estructura_1				
+lineas_1 - variable_1 					
+lineas_1 - operaciones_sin_id_1 		
+lineas_1 - retorno_1					
+lineas_1 - if_1							
+lineas_1 - for_1						
+lineas_1 - while_1						
+if_1 - if ( if_2 ) if_3
+if_2 - operaciones_1
+if_3 - { if_7 } if_4
+if_3 - linea_1 if_4
+if_3 - if_4
+if_4 - else if_5
+if_4 - eps
+if_5 - if_1
+if_5 - linea
+if_5 - { if_7 }
+if_7 - linea_1 if_7
+if_7 - eps
+for_1 - for id in for_2
+for_2 - acc_variable_pura_1 for_3
+for_2 - dec_arreglo_1 for_3
+for_3 - linea_1
+for_3 - { for_4 } 
+for_4 - linea_1 for_4
+for_4 - eps
+while_1 - while (operacion_1) while_2
+while_2 - linea_1
+while_2 - { while_3 }
+while_3 - linea_1 while_3
+while_3 - eps
+a = 2

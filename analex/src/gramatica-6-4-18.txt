@@ -1,0 +1,346 @@
+// GRAMATICA GENERAL
+
+		GG_1 - importar_1 GG_1
+		GG_1 - GG_2
+		GG_2 - dec_funcion_1 GG_2
+		GG_2 - GG_3
+		GG_3 - linea_1 GG_3
+		GG_3 - ε
+
+
+
+// PRIMITIVOS		
+
+		elementos_1 - nil												{nil}
+		elementos_1 - int												{int}
+		elementos_1 - false												{false}
+		elementos_1 - true												{true}
+		elementos_1 - string											{string}
+
+
+
+// SEGMENTO DE ID, OPERACION, ARREGLO, ESTRUCTURA
+
+		seg_1 - acc_variable_1
+		seg_1 - operaciones_sin_id_1
+		seg_1 - dec_arreglo_1
+		seg_1 - dec_estructura_1
+
+
+
+// TODO LO QUE EMPIECE CON ID: acceso arreglo, acceso funcion, acceso estructura, asignaciones, operaciones
+
+		variable_1 - id variable_2 																								{id}
+		variable_2 - ε																											{ 	}
+		variable_2 - = variable_3																								{=}
+		variable_2 - acc_arreglo_1 variable_4																					{[}
+		variable_2 - acc_estructura_1 variable_4																				{.}
+		variable_2 - acc_funcion_1																								{(}
+		variable_2 - operaciones_14 operaciones_12 operaciones_10 operaciones_8 operaciones_6 operaciones_4 operaciones_2 		{or, and, igual_num, diff_num, mayor, menor, mayor_igual, menor_igual, mas, menos, mul, div, mod, pot }
+		variable_3 - seg_1  																				{id, [, {, nil, int, false, true, string, not, (}
+		variable_4 - ε																											{	 }
+		variable_4 - = variable_3																								{=}
+
+
+
+// ACCESO A ID, ARREGLO, ESTRUCTURA Y OPERACION BOOLEANA O ARITMETICA (no contiene asignacion)		
+
+		acc_variable_1 - id acc_variable_2 																						{id}
+		acc_variable_2 - ε																										{	 }
+		acc_variable_2 - acc_arreglo_1																							{[}
+		acc_variable_2 - acc_estructura_1																						{.}
+		acc_variable_2 - acc_funcion_1																							{(}
+		acc_variable_2 - operaciones_14 operaciones_12 operaciones_10 operaciones_8 operaciones_6 operaciones_4 operaciones_2 	{or, and, igual_num, diff_num, mayor, menor, mayor_igual, menor_igual, mas, menos, mul, div, mod, pot }
+
+
+
+// ACCESO A ID, ARREGLO, ESTRUCTURA Y OPERACION ARITMETICA	(usado para el acceso a arreglos)	
+
+		acc_variable_arit_1 - id acc_variable_arit_2													{id}
+		acc_variable_arit_2 - operaciones_arit_6 operaciones_arit_4 operaciones_arit_2					{ 	}
+		acc_variable_arit_2 - ε																			{	}
+		acc_variable_arit_2 - acc_arreglo_1																{[}
+		acc_variable_arit_2 - acc_estructura_1															{.}
+		acc_variable_arit_2 - acc_funcion_1																{(}
+
+
+
+// ACCESO A ID, ARREGLO, ESTRUCTURA 
+
+		acc_variable_arit_pura_1 - id acc_variable_arit_pura_2													{id}
+		acc_variable_arit_pura_2 - operaciones_arit_6 operaciones_arit_4 operaciones_arit_2						{ 	}
+		acc_variable_arit_pura_2 - ε																			{	}
+		acc_variable_arit_pura_2 - acc_arreglo_1																{[}
+		acc_variable_arit_pura_2 - acc_estructura_1																{.}
+		acc_variable_arit_pura_2 - acc_funcion_1																{(}
+
+
+
+// ACCESO A ID, ARREGLO, ESTRUCTURA
+		
+		acc_variable_pura_1 - id acc_variable_arit_2													{id}
+		acc_variable_pura_2 - ε																			{	}
+		acc_variable_pura_2 - acc_arreglo_1																{[}
+		acc_variable_pura_2 - acc_estructura_1															{.}
+		acc_variable_pura_2 - acc_funcion_1																{(}
+
+
+
+// DECLARACION DE ARREGLO
+
+		dec_arreglo_1 - [ dec_arreglo_2 ]								{[}
+		dec_arreglo_2 - seg_1 dec_arreglo_3								{id, [, {, nil, int, false, true, string, not, (}
+		dec_arreglo_3 - , dec_arreglo_2									{,}
+		dec_arreglo_3 - ε												{	}
+
+
+
+// DECLARACION DE ESTRUCTURAS
+
+		dec_estructura_1 - { dec_estructura_2 }							{{}
+		dec_estructura_2 - id : dec_estructura_3						{id}
+		dec_estructura_3 - seg_1 dec_estructura_4 						{id, [, {, nil, int, false, true, string, not, (}
+		dec_estructura_4 - ε 											{	}
+		dec_estructura_4 - , dec_estructura_2							{,}
+
+
+
+// ACCESO A ESTRUCTURA		
+
+		acc_estructura_1 - . id acc_estructura_2						{id}
+		acc_estructura_2 - ε											{	}
+		acc_estructura_2 - . id acc_estructura_2						{.}
+
+
+
+// ACCESO A ARREGLO
+
+		acc_arreglo_1 - [ acc_arreglo_2 ] 							{[}
+		acc_arreglo_2 - acc_variable_arit_1 acc_arreglo_3			{id}
+		acc_arreglo_2 - operaciones_arit_sin_id_1 acc_arreglo_3		{	}
+		acc_arreglo_3 - , acc_arreglo_2								{,}
+		acc_arreglo_3 - ε											{	}
+
+
+
+// ACCESO A FUNCION
+
+		acc_funcion_1 - ( acc_funcion_2 )							{(}
+		acc_funcion_2 - seg_1 acc_funcion_3							{id, [, {, nil, int, false, true, string, not, (}
+		acc_funcion_3 - ε											{	}
+		acc_funcion_3 - , acc_funcion_2								{,}
+
+
+
+// OPERACIONES BOOLEANAS Y ARITMETICAS 
+
+		operaciones_1 - operaciones_3 operaciones_2					{nil, int, false, true, string, id. (}		
+		operaciones_2 - or operaciones_3 operaciones_2				{or}
+		operaciones_2 - ε											{	}
+		operaciones_3 - operaciones_5 operaciones_4					{nil, int, false, true, string, id. (}	
+		operaciones_4 - and operaciones_5 operaciones_4				{and}	
+		operaciones_4 - ε											{	}
+		operaciones_5 - operaciones_7 operaciones_6					{nil, int, false, true, string, id. (}	
+		operaciones_6 - igual_num operaciones_7 operaciones_6		{igual_num}	
+		operaciones_6 - diff_num operaciones_7 operaciones_6		{diff_num}			
+		operaciones_6 - ε											{	}
+		operaciones_7 - operaciones_9 operaciones_8					{nil, int, false, true, string, id. (}		
+		operaciones_8 - mayor operaciones_9 operaciones_8			{mayor}			
+		operaciones_8 - menor operaciones_9 operaciones_8			{menor}		
+		operaciones_8 - mayor_igual operaciones_9 operaciones_8		{mayor_igual}		
+		operaciones_8 - menor_igual operaciones_9 operaciones_8		{menor_igual}	
+		operaciones_8 - ε											{	}
+		operaciones_9 - operaciones_11 operaciones_10				{nil, int, false, true, string, id. (}			
+		operaciones_10 - mas operaciones_11 operaciones_10			{mas}	
+		operaciones_10 - menos operaciones_11 operaciones_10		{menos}			
+		operaciones_10 - ε											{	}
+		operaciones_11 - operaciones_13 operaciones_12				{nil, int, false, true, string, id. (}		
+		operaciones_12 - mul operaciones_13 operaciones_12			{mul}		
+		operaciones_12 - div operaciones_13 operaciones_12			{div}		
+		operaciones_12 - mod operaciones_13 operaciones_12			{mod}		
+		operaciones_12 - ε											{	}
+		operaciones_13 - operaciones_17 operaciones_14				{nil, int, false, true, string, id. (}			
+		operaciones_14 - pot operaciones_17 operaciones_14			{pot}			
+		operaciones_14 - ε											{	}
+		operaciones_17 - not operaciones_17 						{not}
+		operaciones_17 - elementos_1								{nil, int, false, true, string}
+		operaciones_17 - acc_variable_pura_1						{id}
+		operaciones_17 - ( operaciones_1 )							{(}
+
+
+
+// OPERACIONES BOOLEANAS Y ARITMETICAS QUE NO EMPIEZAN CON ID (usado despues de un igual, dentro de un arreglo, dentro de una estructura, dentro de una funcion)
+
+		operaciones_sin_id_1 - operaciones_sin_id_3 operaciones_sin_id_2						{nil, int, false, true, string, not, (}
+		operaciones_sin_id_2 - or operaciones_sin_id_3 operaciones_sin_id_2						{or}
+		operaciones_sin_id_2 - ε																{	}
+		operaciones_sin_id_3 - operaciones_sin_id_5 operaciones_sin_id_4						{nil, int, false, true, string, not, (}
+		operaciones_sin_id_4 - and operaciones_sin_id_5 operaciones_sin_id_4					{and}
+		operaciones_sin_id_4 - ε																{	}
+		operaciones_sin_id_5 - operaciones_sin_id_7 operaciones_sin_id_6						{nil, int, false, true, string, not, (}
+		operaciones_sin_id_6 - igual_num operaciones_sin_id_7 operaciones_sin_id_6				{igual_num}
+		operaciones_sin_id_6 - diff_num operaciones_sin_id_7 operaciones_sin_id_6				{diff_num}
+		operaciones_sin_id_6 - ε																{	}
+		operaciones_sin_id_7 - operaciones_sin_id_9 operaciones_sin_id_8						{nil, int, false, true, string, not, (}
+		operaciones_sin_id_8 - mayor operaciones_sin_id_9 operaciones_sin_id_8					{mayor}
+		operaciones_sin_id_8 - menor operaciones_sin_id_9 operaciones_sin_id_8					{menor}
+		operaciones_sin_id_8 - mayor_igual operaciones_sin_id_9 operaciones_sin_id_8			{mayor_igual}
+		operaciones_sin_id_8 - menor_igual operaciones_sin_id_9 operaciones_sin_id_8			{menor_igual}
+		operaciones_sin_id_8 - ε																{ 	}
+		operaciones_sin_id_9 - operaciones_sin_id_11 operaciones_sin_id_10						{nil, int, false, true, string, not, (}
+		operaciones_sin_id_10 - mas operaciones_sin_id_11 operaciones_sin_id_10					{mas}
+		operaciones_sin_id_10 - menos operaciones_sin_id_11 operaciones_sin_id_10				{menos}	
+		operaciones_sin_id_10 - ε																{	}
+		operaciones_sin_id_11 - operaciones_sin_id_13 operaciones_sin_id_12						{nil, int, false, true, string, not, (}
+		operaciones_sin_id_12 - mul operaciones_sin_id_13 operaciones_sin_id_12					{mul}
+		operaciones_sin_id_12 - div operaciones_sin_id_13 operaciones_sin_id_12					{div}
+		operaciones_sin_id_12 - mod operaciones_sin_id_13 operaciones_sin_id_12					{mod}
+		operaciones_sin_id_12 - ε																{	}
+		operaciones_sin_id_13 - operaciones_sin_id_17 operaciones_sin_id_14						{nil, int, false, true, string, not, (}
+		operaciones_sin_id_14 - pot operaciones_sin_id_17 operaciones_sin_id_14					{pot}
+		operaciones_sin_id_14 - ε																{	}
+		operaciones_sin_id_17 - not operaciones_sin_id_17										{not}
+		operaciones_sin_id_17 - elementos_1														{nil, int, false, true, string}
+		operaciones_sin_id_17 - ( operaciones_sin_id_1 )										{(}
+
+
+
+// OPERACIONES ARITMETICAS 		(usado solo en la declaracion de arreglos)
+
+		operaciones_arit_1 - operaciones_arit_3 operaciones_arit_2				{int, id, (}					
+		operaciones_arit_2 - mas operaciones_arit_3 operaciones_arit_2			{mas}	
+		operaciones_arit_2 - menos operaciones_arit_3 operaciones_arit_2		{menos}			
+		operaciones_arit_2 - ε													{	}
+		operaciones_arit_3 - operaciones_arit_5 operaciones_arit_4				{int, id, (}		
+		operaciones_arit_4 - mul operaciones_arit_5 operaciones_arit_4			{mul}		
+		operaciones_arit_4 - div operaciones_arit_5 operaciones_arit_4			{div}		
+		operaciones_arit_4 - mod operaciones_arit_5 operaciones_arit_4			{mod}		
+		operaciones_arit_4 - ε													{	}
+		operaciones_arit_5 - operaciones_arit_9 operaciones_arit_6				{int, id, (}			
+		operaciones_arit_6 - pot operaciones_arit_9 operaciones_arit_6			{pot}			
+		operaciones_arit_6 - ε													{	}
+ 		operaciones_arit_9 - int												{int}														
+		operaciones_arit_9 - acc_variable_arit_pura_1							{id}
+		operaciones_arit_9 - ( operaciones_arit_1 )								{(}
+
+
+
+// OPERACIONES SOLO ARITMETICAS QUE NO EMPIEZAN CON ID		(usado solo en la declaracion de arreglos)
+
+		operaciones_arit_sinid_1 - operaciones_arit_sinid_3 operaciones_arit_sinid_2			{int, (}				
+		operaciones_arit_sinid_2 - mas operaciones_arit_sinid_3 operaciones_arit_sinid_2		{mas}		
+		operaciones_arit_sinid_2 - menos operaciones_arit_sinid_3 operaciones_arit_sinid_2		{menos}			
+		operaciones_arit_sinid_2 - ε															{	}
+		operaciones_arit_sinid_3 - operaciones_arit_sinid_5 operaciones_arit_sinid_4			{int, (}			
+		operaciones_arit_sinid_4 - mul operaciones_arit_sinid_5 operaciones_arit_sinid_4		{mul}			
+		operaciones_arit_sinid_4 - div operaciones_arit_sinid_5 operaciones_arit_sinid_4		{div}			
+		operaciones_arit_sinid_4 - mod operaciones_arit_sinid_5 operaciones_arit_sinid_4		{mod}			
+		operaciones_arit_sinid_4 - ε															{	}
+		operaciones_arit_sinid_5 - operaciones_arit_sinid_9 operaciones_arit_sinid_6			{int, (}				
+		operaciones_arit_sinid_6 - pot operaciones_arit_sinid_9 operaciones_arit_sinid_6		{pot}				
+		operaciones_arit_sinid_6 - ε															{	}
+ 		operaciones_arit_sinid_9 - int															{int}											
+		operaciones_arit_sinid_9 - ( operaciones_arit_sinid_1 )									{(}
+
+
+
+
+// DECLARACION DE FUNCION
+
+		dec_funcion_1 - funcion id ( dec_funcion_2 ) dec_funcion_4 end funcion 			{funcion}
+		dec_funcion_2 - id dec_funcion_3												{id}
+		dec_funcion_3 - , dec_funcion_2													{,}
+		dec_funcion_3 - ε																{	}
+		dec_funcion_4 - linea_1 dec_funcion_4											{	}
+		dec_funcion_4 - dec_funcion_1 dec_funcion_4										{funcion}
+		dec_funcion_4 - ε																{	}
+
+
+
+// IMPORTAR
+
+		importar_1 - importar_2 importar_3		{desde, importar3}						
+		importar_2 - desde importar_4			{desde}				
+		importar_2 - ε							{	}	
+		importar_3 - importar importar_4 		{importar}		
+		importar_4 - id	importar_5				{id}
+		importar_5 - . id importar_5			{.}
+		importar_5 - ε							{	}
+
+
+
+// RETORNO  
+		
+		retorno_1 - retorno ( retorno_2 )				{retorno}
+		retorno_2 - seg_1 retorno_3						{id, [, {, nil, int, false, true, string, not, (}
+		retorno_3 - , retorno_2							{,}
+		retorno_3 - ε 									{	}
+
+
+
+// LEER
+
+		leer_1 - leer ( leer_2 ) 				{leer}
+		leer_2 - acc_variable_pura_1			{id}
+
+
+
+// LOG
+
+		log_1 - log(log_2)					
+		log_2 - operaciones_1
+
+
+
+// LINEAS DE SENTENCIA
+
+		lineas_1 - leer_1						{leer}
+		lineas_1 - log_1						{log}
+		lineas_1 - dec_arreglo_1				{[}
+		lineas_1 - dec_estructura_1				{{}
+		lineas_1 - variable_1 					{id}
+		lineas_1 - operaciones_sin_id_1 		{nil, int, false, true, string, not, (}
+		lineas_1 - retorno_1					{retorno}
+		lineas_1 - if_1							{if}
+		lineas_1 - for_1						{for}
+		lineas_1 - while_1						{while}
+
+
+
+// IF
+		if_1 - if ( if_2 ) if_3
+		if_2 - operaciones_1
+		if_3 - { if_7 } if_4
+		if_3 - linea_1 if_4
+		if_3 - if_4
+		if_4 - else if_5
+		if_4 - ε
+		if_5 - if_1
+		if_5 - linea
+		if_5 - { if_7 }
+		if_7 - linea_1 if_7
+		if_7 - ε
+
+
+
+// FOR
+
+		for_1 - for id in for_2
+		for_2 - acc_variable_pura_1 for_3
+		for_2 - dec_arreglo_1 for_3
+		for_3 - linea_1
+		for_3 - { for_4 } 
+		for_4 - linea_1 for_4
+		for_4 - ε
+
+
+
+// WHILE
+
+		while_1 - while (operacion_1) while_2
+		while_2 - linea_1
+		while_2 - { while_3 }
+		while_3 - linea_1 while_3
+		while_3 - ε
+
+
